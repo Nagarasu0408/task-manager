@@ -154,7 +154,7 @@ let display = document.getElementById('stoper');
 function Start() {
     if (!isrunning) {
         document.getElementById('start').disabled = true;
-        document.getElementById('print').disabled = false;
+        // document.getElementById('print').disabled = false;
         s1 = setInterval(mySecond, 1000);
         s2 = setInterval(myMinute, 60000);
         s3 = setInterval(myHour, 3600000);
