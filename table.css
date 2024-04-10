@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+
+}
+
+
+
+.UserName {
+    color: #ef920fd3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: "Roboto Slab", "Poppins";
+}
+
+
+
+
+
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    border-radius: 50%;
+    opacity: .3;
+    z-index: -100;
+}
+
+.background .shape2 {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    border-radius: 50%;
+    opacity: .5;
+    z-index: -100;
+}
+
+.background .shape3 {
+    height: 250px;
+    width: 250px;
+    position: fixed;
+    border-radius: 50%;
+    opacity: .14;
+    z-index: -100;
+}
+
+.background .shape4 {
+    height: 250px;
+    width: 250px;
+    position: fixed;
+    border-radius: 50%;
+    opacity: .07;
+    z-index: -100;
+}
+
+.shape:first-child {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    left: -150px;
+    top: 80px;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    right: 30px;
+    bottom: -150px;
+}
+
+
+
+.shape2:nth-child(2) {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    right: 80px;
+    bottom: 180px;
+}
+
+.shape2:nth-child(1) {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    left: 50px;
+    top: 250px;
+}
+
+.shape3:nth-child(2) {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    right: -80px;
+    bottom: 180px;
+}
+
+
+
+.shape3:nth-child(1) {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    left: -200px;
+    bottom: -100px;
+}
+
+.shape4:nth-child(2) {
+    background: linear-gradient(#1845ad,
+            #23a2f6);
+    right: 400px;
+    top: 200px;
+}
+
+.shape4:nth-child(1) {
+    background: linear-gradient(to right,
+            #ff512f,
+            #f09819);
+    right: 0px;
+    top: -80px;
+}
+
+
+.navcss {
+    backdrop-filter: blur(50px);
+    background-color: pink;
+}
+
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.Circle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    border: 5px solid rgb(6, 241, 49);
+    border-radius: 100%;
+    margin: 5%;
+}
+
+
+.Circle p {
+    font-size: 29px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 5px;
+}
+
+
+.social {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    background-color: rgba(221, 221, 221, 0.474);
+    width: 60px;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.social div {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.social p {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+
+
+
+
+
+
+
+.btn-open-popup {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-open-popup:hover {
+    background-color: #4caf50;
+}
+
+.overlay-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 420px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    text-align: left;
+}
+
+.form-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-submit,
+.btn-close-popup {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-submit {
+    background-color: green;
+    color: #fff;
+}
+
+.btn-close-popup {
+    margin-top: 12px;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-submit:hover,
+.btn-close-popup:hover {
+    background-color: #4caf50;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for popup */
+.overlay-container.show {
+    display: flex;
+    opacity: 1;
+}

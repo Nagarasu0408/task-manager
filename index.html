@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM</title>
+    <link rel="stylesheet" href="table.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="mb-5 navbar navbar-light bg-white border-bottom sticky-top p-2 navcss">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 text-primary "
+                style="font-size: 35px;font-weight: 500;letter-spacing: 2px;margin-left: 10px;text-align: center;">
+                <img src="https://www.freeiconspng.com/uploads/task-manager-icon-14.png" alt="" width="45" height="35"
+                    class="d-inline-block align-text-top"> Task Manager</span>
+            <div>
+                <button type="button" class="btn btn-outline-primary m-1" id="LognavigateButton">Login</button>
+                <button type="button" class="btn btn-outline-primary m-0" id="RegnavigateButton">Sign up</button>
+                <!-- <i class="bi bi-gear h2 text-center text-primary mt-2"></i> -->
+            </div>
+        </div>
+    </nav>
+    <div class="UserName">
+        <h1 id="usernameDisplay" class="container text-center"></h1>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="background">
+        <div class="shape2"></div>
+        <div class="shape2"></div>
+    </div>
+
+    <div class="background">
+        <div class="shape3"></div>
+        <div class="shape3"></div>
+    </div>
+    <div class="background">
+        <div class="shape4"></div>
+        <div class="shape4"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="d-flex flex-column w-100">
+        <div class="container">
+            <div class="row mt-5 mb-5">
+                <div class="col-6">
+                    <form class="m-4 w-100" onsubmit="Submit(event)">
+                        <div class="mb-3">
+                            <label for="select" class="form-label h5">Category</label>
+                            <select id="select" class="form-select">
+                                <option>Select</option>
+                                <option>Work</option>
+                                <option>Personal Space</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="Sub-Category" class="mb-2form-label h5">Sub-Category</label>
+                            <input type="text" class="form-control" id="Sub-Category" aria-describedby="emailHelp"
+                                value="">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Duration" class="form-label h5">Duration</label>
+                            <input type="text" class="form-control" id="Duration">
+                        </div>
+                        <div class="mb-4">
+                            <label for="Task" class="form-label h5">Task</label>
+                            <input type="text" class="form-control" id="Task">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                        <button type="button" id="filter" class="btn btn-primary">Filter</button>
+                    </form>
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <div class="d-flex flex-row w-100  ">
+
+                        <div class="d-flex  w-50 flex-column m-2">
+                            <div class="Circle border-success rounded-circle">
+                                <p class="time">
+                                <p class="hour">00:</p>
+                                <p class="minute">00</p>
+                                <p class="second">:00</p>
+                                </p>
+                            </div>
+                            <div class="d-flex flex-row m-2 ">
+                                <button class="m-2 btn btn-light btn-lg btn-outline-primary" id="start">Start</button>
+                                <button class="m-2 btn btn-light btn-lg btn-outline-danger" id="stop">Stop</button>
+                                <button class="m-2 btn btn-light btn-lg btn-outline-primary" id="reset">Reset</button>
+                                <!-- <button class="m-2 btn btn-light btn-lg btn-outline-primary" id="print">Print</button> -->
+                            </div>
+                            <div id="stoper" class="d-flex flex-column">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <table class="table table-striped table-hover w-100 align-center justify-center">
+                <thead>
+                    <tr>
+                        <th scope="col"> Category</th>
+                        <th scope="col">Sub-Category</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Display the Table of Content  -->
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    
+
+
+    <!-- <button class="btn-open-popup" onclick="togglePopup()">
+        Open Popup Form
+    </button> -->
+
+    <div id="popupOverlay" class="overlay-container">
+        <div class="popup-box">
+            <h2 class="mb-4 text-primary">Edit Data</h2>
+            <form class="form-container">
+                <div class="mb-4">
+                    <label for="Category" class="mb-2 form-label h5">Category</label>
+                    <input type="text" class="form-control" id="EditCategory" value="">
+                </div>
+                <div class="mb-4">
+                    <label for="Sub-Category" class="mb-2 form-label h5">Sub-Category</label>
+                    <input type="text" class="form-control" id="EditSub-Category" value="">
+                </div>
+                <div class="mb-4">
+                    <label for="Duration" class="form-label h5">Duration</label>
+                    <input type="text" class="form-control" id="EditDuration">
+                </div>
+                <div class="mb-4">
+                    <label for="Task" class="form-label h5">Task</label>
+                    <input type="text" class="form-control" id="EditTask">
+                </div>
+
+                <button class="btn-submit text-white bg-primary" id="editbtn" type="button">
+                    Submit
+                </button>
+            </form>
+
+            <button class="btn-close-popup" onclick="togglePopup()">
+                Close
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="social">
+        <p>Social Media</p>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div> -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="table.js">
+</script>
+
+</html>
