@@ -159,37 +159,38 @@ function Start() {
         s2 = setInterval(myMinute, 60000);
         s3 = setInterval(myHour, 3600000);
         function mySecond() {
+            if (Second != 60)
+                Second++;
+            else
+                Second = 0;
             if (Second < 10) {
                 s.innerHTML = ":0" + `${Second}`;
             }
             else
                 s.innerHTML = ":" + `${Second}`;
-            if (Second != 60)
-                Second++;
-            else
-                Second = 0;
+
         }
         function myMinute() {
+            if (Min != 59)
+                Min++;
+            else
+                Min = 0;
             if (Min < 10) {
                 m.innerHTML = "0" + `${Min}`;
             }
             else
                 m.innerHTML = ":" + `${Min}`;
-            if (Min != 59)
-                Min++;
-            else
-                Min = 0;
         }
         function myHour() {
-            if (Hour < 10)
-                h.innerHTML = "0" + `${Hour}`;
-            else
-                h.innerHTML = "" + `${Hour}`;
             if (Hour != 23)
                 Hour++;
             else
                 Hour = 0;
         }
+        if (Hour < 10)
+                h.innerHTML = "0" + `${Hour}`;
+            else
+                h.innerHTML = "" + `${Hour}`;
     }
 }
 
